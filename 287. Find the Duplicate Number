@@ -1,0 +1,13 @@
+class Solution {
+    public int findDuplicate(int[] nums) {
+        HashSet<Integer> a = new HashSet<>();
+        int common=0;
+        for(int ele : nums){
+            if(a.contains(ele)){
+                common = ele;
+            }
+            a.add(ele);
+        }
+        return common;
+    }
+}
