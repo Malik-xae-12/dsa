@@ -1,0 +1,18 @@
+class Solution {
+    public int searchInsert(int[] nums, int target) {
+        ArrayList<Integer> a = new ArrayList<>();
+        for(int ele : nums){
+            a.add(ele);
+        }
+        int index=-1;
+        for(int i=0;i<nums.length;i++){
+            if(target>=nums[i]){
+                index++;
+            }
+        }
+        if(!a.contains(target)){
+            return index+1;
+        }
+        return index;
+    }
+}
