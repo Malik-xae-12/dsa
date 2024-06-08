@@ -1,0 +1,18 @@
+class Solution {
+    public boolean isAnagram(String s, String t) {
+        int nums[] = new int[26];
+        int nums1[] = new int[26];
+        for(char ele : s.toCharArray()){
+            int temp = ele-'a';
+            nums[temp]++;
+        }
+        for(char ele :t.toCharArray()){
+            int temp = ele-'a';
+            nums1[temp]++;
+        }
+        if(Arrays.equals(nums,nums1)){
+            return true;
+        }
+        return false;
+    }
+}
