@@ -1,0 +1,9 @@
+class Solution {
+    public int findMin(int[] nums) {
+        ArrayList<Integer> a = new ArrayList<>();
+        for(int ele:nums){
+            a.add(ele);
+        }
+        return Collections.min(a);
+    }
+}
