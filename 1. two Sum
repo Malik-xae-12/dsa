@@ -1,0 +1,21 @@
+class Solution {
+    public static int[] twoSum(int[] nums, int target) {
+        int[] newArr = new int[2]; // Initialize newArr with size 2
+        for(int i = 0; i < nums.length; i++) {
+            for(int j = i+1; j < nums.length; j++) { // Start inner loop from i + 1 to avoid using the same element twice
+                if(nums[i] + nums[j] == target) {
+                    newArr[0] = i;
+                    newArr[1] = j;
+                    return newArr; // Return the result immediately when found
+                }
+            }
+        }
+        return newArr; // Return newArr even if no solution found
+    }
+
+    public static void main(String args[]) {
+        int[] arr = {3, 2, 4};
+        int[] modArr = twoSum(arr, 6);
+        System.out.println(modArr[0] + " " + modArr[1]); // Print the elements of modArr
+    }
+}
