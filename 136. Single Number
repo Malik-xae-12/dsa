@@ -1,0 +1,15 @@
+class Solution {
+    public int singleNumber(int[] nums) {
+        ArrayList<Integer> a = new ArrayList<>();
+        for(int ele:nums){
+            if(!a.contains(ele)){
+                a.add(ele);
+            }
+            else{
+                a.remove(Integer.valueOf(ele));
+            }
+        }
+        int num=a.get(0);
+        return num;
+    }
+}
