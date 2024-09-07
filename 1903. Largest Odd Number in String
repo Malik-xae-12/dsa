@@ -1,26 +1,12 @@
 class Solution {
     public String largestOddNumber(String num) {
-        int copy=Integer.valueOf(num);
-        int long_odd=0;
-        if(copy%2!=0){
-            return String.valueOf(copy);
-        }
-        else{
-           
-            for(int i=0;i<num.length();i++){
-                String temp="";
-                for(int j=i;j<num.length();j++){
-                    temp+=(num.charAt(j));
-                    if(Integer.valueOf(temp)%2!=0){
-                        long_odd=Math.max(Integer.valueOf(temp),long_odd);
-                    }
-                }
-            
-            }
-        }
-       if(long_odd==0){
-        return "";
+       int len = num.length()-1;
+       for(int i=len;i>=0;i--){
+            int index_value=num.charAt(i)-'0';
+            if(index_value%2!=0){
+                return num.substring(0,i+1);
+            }            
        }
-       return String.valueOf(long_odd);
+       return "";
     }
 }
