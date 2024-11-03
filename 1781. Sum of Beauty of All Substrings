@@ -1,0 +1,25 @@
+class Solution {
+    public int calBeauty(int[] freq){
+        int max=Integer.MIN_VALUE;
+        int min=Integer.MAX_VALUE;
+        for(int ele:freq){
+           if(ele>0){
+             max=Math.max(max,ele);
+            min=Math.min(min,ele);
+           }
+        }
+       return max==Integer.MIN_VALUE?0: max - min;
+    }
+    public int beautySum(String s) {
+        int totalBeauty=0;
+        for(int i=0;i<s.length();i++){
+            int freq[] = new int[26];
+            for(int j=i;j<s.length();j++){
+                freq[s.charAt(j)-'a']++;
+                totalBeauty+=calBeauty(freq);
+            }
+            
+        }
+        return totalBeauty;
+    }
+}
